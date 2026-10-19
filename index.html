@@ -5,7 +5,7 @@
 .intensificacion{border:2px solid var(--accent);background:linear-gradient(150deg,#172b44,#17213a)}.integrador-step{background:#202d4a;padding:16px;border-radius:12px;margin:12px 0}.integrador-step h3{color:var(--gold);margin:0 0 7px}.integrador-step textarea{margin-top:8px}.rubrica{width:100%;border-collapse:collapse}.rubrica td,.rubrica th{padding:10px;border-bottom:1px solid #405373;text-align:left}.integrador-status{color:var(--accent);font-weight:700}.intensificacion .hint{color:#b7dbef}
 
 .authbox{border:1px solid #4c7390;background:#142943;border-radius:12px;padding:16px;margin:15px 0}.authbox input{width:100%;padding:11px;margin:6px 0 12px;background:#101a30;color:white;border:1px solid #61718f;border-radius:9px}.authbox button{margin:4px}.statusLine{color:#ffcf74}.lockedQuiz{opacity:.72}.lockedQuiz input{pointer-events:none}
-</style></head><body><header><div>💻 APRENDÉ · EXPLORÁ · CREÁ</div><h1>NTICx · Aula interactiva</h1><p style="font-weight:700;font-size:1.12rem;margin:0 0 12px">Prof. Vanina Cabrera</p><p class="lead">Nuevas Tecnologías de la Información y la Conectividad · 4.º año · Diseño Curricular NTICx 2026 · 7 unidades. Clases con explicaciones, actividades para resolver y evaluaciones de 20 preguntas por unidad.</p></header><main><section class="panel"><h2>🎯 Expectativas de logro</h2><p>Conocer herramientas tecnológicas; crear, innovar, comunicar e investigar; resolver problemas y tomar decisiones; participar críticamente como ciudadanos digitales; comunicarse de manera sincrónica y asincrónica; colaborar, evaluar fuentes y utilizar recursos de la Web 2.0.</p><h2>📌 Criterios de evaluación</h2><p>Exposiciones orales y escritas; trabajos prácticos en tiempo y forma; compromiso y participación; selección de fuentes; vocabulario específico; comprensión de consignas; progreso continuo, responsabilidad y convivencia respetuosa.</p></section><section class="panel"><h2>👋 Empezá por acá</h2><div class="authbox"><h3>🔐 Acceso de estudiantes</h3><p>Registrate una sola vez con tu DNI. Si ya tenés cuenta, ingresá con tu contraseña personal.</p><div id="authLoggedOut"><label>DNI (sin puntos)<input id="authDni" inputmode="numeric" maxlength="9" autocomplete="username" placeholder="Ej.: 45123456"></label><div id="registerFields"><label>Apellido y nombre<input id="regName" type="text" autocomplete="name" placeholder="Ej.: Pérez Martina"></label><label>Curso<input id="regCourse" type="text" placeholder="Ej.: 4.º A"></label><p class="small">La contraseña inicial es <strong>QUILMES</strong>. Al registrarte tendrás que cambiarla por una personal.</p></div><label id="passwordLabel">Contraseña<input id="authPassword" type="password" autocomplete="current-password" placeholder="Contraseña"></label><button type="button" id="registerBtn">Crear mi cuenta</button><button type="button" id="loginBtn">Ya tengo cuenta · Ingresar</button></div><div id="changePasswordBox" hidden><h4>🔑 Cambiá tu contraseña inicial</h4><p>Antes de continuar, elegí una contraseña personal de al menos 10 caracteres. No uses QUILMES.</p><label>Nueva contraseña<input id="newPassword" type="password" autocomplete="new-password" minlength="10"></label><label>Repetir contraseña<input id="newPassword2" type="password" autocomplete="new-password" minlength="10"></label><button type="button" id="changePasswordBtn">Guardar mi contraseña personal</button></div><button type="button" id="logout" hidden>Cerrar sesión</button><p id="authStatus" class="statusLine" aria-live="polite">Iniciá sesión para guardar trabajos y rendir evaluaciones.</p></div><p>Escribí tus datos para identificar tus resultados. Podés recorrer las unidades en cualquier orden.</p><label>Nombre y apellido<input id="student" type="text" placeholder="Ej.: Martina Pérez"></label><label>Curso<input id="course" type="text" placeholder="Ej.: 4.º A"></label><p class="small muted">Con sesión iniciada, las actividades se guardan en Supabase y cada examen permite un único intento.</p><div class="progress"><span id="progress"></span></div><p id="progressText" class="muted">0 de 7 unidades evaluadas</p><nav id="nav"></nav></section><div id="units"></div><section class="panel intensificacion" id="intensificacion"><h2>🌟 Período de intensificación · NTICx 2026</h2><p><strong>Proyecto integrador:</strong> Mi campaña digital: comunicar, crear y participar responsablemente.</p><p>Elegí una problemática para concientizar a la comunidad: ciberacoso, desinformación, ambiente, convivencia digital o uso responsable de inteligencia artificial. Podés proponer otra con autorización de la docente.</p><p><strong>Modalidad:</strong> individual. Consultá con la docente si debés completar el proyecto entero o solo las unidades que tenés pendientes.</p><p class="muted">Completá tu nombre, apellido y curso actual al comienzo de la plataforma. Leé las explicaciones de las unidades antes de resolver.</p><div id="integradorPasos"></div><div class="activity"><h3>🎬 Producción final</h3><p>Creá un <strong>afiche digital</strong> y una <strong>producción multimedia</strong> a elección (video breve de 30–60 segundos o presentación de 3–5 diapositivas). Incluí un mensaje claro, fuentes consultadas y créditos de recursos ajenos. Evitá publicar datos personales o imágenes de otras personas sin autorización.</p><label>Describí o enlazá tu producción (si compartís un enlace, revisá los permisos):<textarea id="integradorProducto" placeholder="Título, herramienta usada, enlace o descripción..."></textarea></label><button type="button" id="guardarIntegrador">💾 Guardar trabajo integrador</button> <span id="integradorGuardado" class="integrador-status" aria-live="polite"></span><p class="hint">⚠️ Con sesión iniciada, el trabajo integrador se guarda en Supabase. Conservá también una copia y entregá las producciones según las indicaciones de la docente.</p></div><h3>📋 Rúbrica orientativa · 100 puntos</h3><table class="rubrica"><thead><tr><th>Criterio</th><th>Puntos</th></tr></thead><tbody><tr><td>Investigación, fuentes y comprensión</td><td>25</td></tr><tr><td>Aplicación de las 7 unidades</td><td>30</td></tr><tr><td>Calidad y claridad de la producción digital</td><td>25</td></tr><tr><td>Evaluación individual</td><td>20</td></tr></tbody></table><p class="muted">La valoración final y la acreditación corresponden a la docente; el cuestionario automático no reemplaza la revisión de las producciones.</p><h3>🧠 Evaluación integradora final</h3><p>20 preguntas · 1 punto por respuesta correcta. Respondé todas antes de corregir.</p><div id="integradorQuiz"></div><button type="button" id="corregirIntegrador">Corregir evaluación integradora</button> <p id="integradorResultado" class="result" aria-live="polite"></p></section><section class="panel" id="summary"><h2>🏆 Mi recorrido</h2><div id="scores">Completá las evaluaciones para ver tus resultados.</div><button onclick="window.print()">🖨️ Imprimir mis resultados</button></section></main><footer>NTICx · Prof. Vanina Cabrera · Material educativo interactivo</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script>
+</style></head><body><header><div>💻 APRENDÉ · EXPLORÁ · CREÁ</div><h1>NTICx · Aula interactiva</h1><p style="font-weight:700;font-size:1.12rem;margin:0 0 12px">Prof. Vanina Cabrera</p><p class="lead">Nuevas Tecnologías de la Información y la Conectividad · 4.º año · Diseño Curricular NTICx 2026 · 7 unidades. Clases con explicaciones, actividades para resolver y evaluaciones de 20 preguntas por unidad.</p></header><main><section class="panel"><h2>🎯 Expectativas de logro</h2><p>Conocer herramientas tecnológicas; crear, innovar, comunicar e investigar; resolver problemas y tomar decisiones; participar críticamente como ciudadanos digitales; comunicarse de manera sincrónica y asincrónica; colaborar, evaluar fuentes y utilizar recursos de la Web 2.0.</p><h2>📌 Criterios de evaluación</h2><p>Exposiciones orales y escritas; trabajos prácticos en tiempo y forma; compromiso y participación; selección de fuentes; vocabulario específico; comprensión de consignas; progreso continuo, responsabilidad y convivencia respetuosa.</p></section><section class="panel"><h2>👋 Empezá por acá</h2><div class="authbox"><h3>🔐 Acceso de estudiantes</h3><p>Registrate una sola vez con tu DNI y una contraseña personal. La docente deberá aprobar tu cuenta.</p><div id="authLoggedOut"><label>DNI (sin puntos)<input id="authDni" inputmode="numeric" maxlength="9" autocomplete="username" placeholder="Ej.: 45123456"></label><div id="registerFields"><label>Apellido y nombre<input id="regName" type="text" autocomplete="name" placeholder="Ej.: Pérez Martina"></label><label>Curso<input id="regCourse" type="text" placeholder="Ej.: 4.º A"></label><p class="small">Elegí una contraseña personal de al menos 10 caracteres. Tu cuenta necesitará aprobación docente.</p></div><label id="passwordLabel">Contraseña<input id="authPassword" type="password" autocomplete="current-password" placeholder="Contraseña"></label><button type="button" id="registerBtn">Solicitar registro</button><button type="button" id="loginBtn">Ya tengo cuenta · Ingresar</button></div><div id="changePasswordBox" hidden><h4>🔑 Cambiá tu contraseña inicial</h4><p>Antes de continuar, elegí una contraseña personal de al menos 10 caracteres. No uses QUILMES.</p><label>Nueva contraseña<input id="newPassword" type="password" autocomplete="new-password" minlength="10"></label><label>Repetir contraseña<input id="newPassword2" type="password" autocomplete="new-password" minlength="10"></label><button type="button" id="changePasswordBtn">Guardar mi contraseña personal</button></div><button type="button" id="logout" hidden>Cerrar sesión</button><div id="teacherLogin" style="margin-top:15px"><details><summary>👩‍🏫 Acceso docente</summary><label>Correo docente<input id="teacherEmail" type="email" autocomplete="email"></label><label>Contraseña<input id="teacherPassword" type="password" autocomplete="current-password"></label><button type="button" id="teacherLoginBtn">Ingresar como docente</button></details></div><div id="teacherPanel" class="hidden"><h3>👩‍🏫 Panel docente · Solicitudes de alumnos</h3><button type="button" id="refreshStudents">Actualizar listado</button><p id="teacherStatus" aria-live="polite"></p><div id="teacherStudents"></div></div><p id="authStatus" class="statusLine" aria-live="polite">Iniciá sesión para guardar trabajos y rendir evaluaciones.</p></div><p>Escribí tus datos para identificar tus resultados. Podés recorrer las unidades en cualquier orden.</p><label>Nombre y apellido<input id="student" type="text" placeholder="Ej.: Martina Pérez"></label><label>Curso<input id="course" type="text" placeholder="Ej.: 4.º A"></label><p class="small muted">Con sesión iniciada, las actividades se guardan en Supabase y cada examen permite un único intento.</p><div class="progress"><span id="progress"></span></div><p id="progressText" class="muted">0 de 7 unidades evaluadas</p><nav id="nav"></nav></section><div id="units"></div><section class="panel intensificacion" id="intensificacion"><h2>🌟 Período de intensificación · NTICx 2026</h2><p><strong>Proyecto integrador:</strong> Mi campaña digital: comunicar, crear y participar responsablemente.</p><p>Elegí una problemática para concientizar a la comunidad: ciberacoso, desinformación, ambiente, convivencia digital o uso responsable de inteligencia artificial. Podés proponer otra con autorización de la docente.</p><p><strong>Modalidad:</strong> individual. Consultá con la docente si debés completar el proyecto entero o solo las unidades que tenés pendientes.</p><p class="muted">Completá tu nombre, apellido y curso actual al comienzo de la plataforma. Leé las explicaciones de las unidades antes de resolver.</p><div id="integradorPasos"></div><div class="activity"><h3>🎬 Producción final</h3><p>Creá un <strong>afiche digital</strong> y una <strong>producción multimedia</strong> a elección (video breve de 30–60 segundos o presentación de 3–5 diapositivas). Incluí un mensaje claro, fuentes consultadas y créditos de recursos ajenos. Evitá publicar datos personales o imágenes de otras personas sin autorización.</p><label>Describí o enlazá tu producción (si compartís un enlace, revisá los permisos):<textarea id="integradorProducto" placeholder="Título, herramienta usada, enlace o descripción..."></textarea></label><button type="button" id="guardarIntegrador">💾 Guardar trabajo integrador</button> <span id="integradorGuardado" class="integrador-status" aria-live="polite"></span><p class="hint">⚠️ Con sesión iniciada, el trabajo integrador se guarda en Supabase. Conservá también una copia y entregá las producciones según las indicaciones de la docente.</p></div><h3>📋 Rúbrica orientativa · 100 puntos</h3><table class="rubrica"><thead><tr><th>Criterio</th><th>Puntos</th></tr></thead><tbody><tr><td>Investigación, fuentes y comprensión</td><td>25</td></tr><tr><td>Aplicación de las 7 unidades</td><td>30</td></tr><tr><td>Calidad y claridad de la producción digital</td><td>25</td></tr><tr><td>Evaluación individual</td><td>20</td></tr></tbody></table><p class="muted">La valoración final y la acreditación corresponden a la docente; el cuestionario automático no reemplaza la revisión de las producciones.</p><h3>🧠 Evaluación integradora final</h3><p>20 preguntas · 1 punto por respuesta correcta. Respondé todas antes de corregir.</p><div id="integradorQuiz"></div><button type="button" id="corregirIntegrador">Corregir evaluación integradora</button> <p id="integradorResultado" class="result" aria-live="polite"></p></section><section class="panel" id="summary"><h2>🏆 Mi recorrido</h2><div id="scores">Completá las evaluaciones para ver tus resultados.</div><button onclick="window.print()">🖨️ Imprimir mis resultados</button></section></main><footer>NTICx · Prof. Vanina Cabrera · Material educativo interactivo</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script>
 const units=[
 {title:'Alfabetización informática y computacional',emoji:'🖥️',intro:'Comprendemos cómo funcionan las computadoras y cómo organizamos nuestros archivos.',topics:[['Información y datos','Un dato es un valor o registro; la información surge cuando los datos se organizan e interpretan. Ejemplo: una lista de notas se transforma en información cuando calculamos el promedio.'],['Hardware y software','El hardware son las partes físicas: teclado, pantalla, procesador y memoria. El software son los programas y sistemas que ejecutamos.'],['Entrada, proceso, salida y almacenamiento','El teclado permite ingresar datos; el procesador los procesa; la pantalla muestra resultados; el disco o SSD guarda archivos.'],['Sistema operativo y aplicaciones','Windows, Linux y Android administran recursos. Un navegador, un editor de texto y una planilla son aplicaciones.'],['Archivos, carpetas y formatos','Las carpetas organizan archivos. Extensiones como .pdf, .jpg, .docx y .xlsx orientan sobre su tipo. Las copias de seguridad previenen pérdidas.'],['Almacenamiento y nube','Los archivos pueden guardarse localmente o en servicios en la nube. Conviene proteger las cuentas y revisar permisos de acceso.']],tasks:['Dibujá una computadora y señalá cuatro componentes de hardware y dos ejemplos de software.','Creá una estructura de carpetas para organizar las materias de la escuela. Explicá qué archivos guardarías en cada una.','Escribí dos ventajas y dos precauciones del almacenamiento en la nube.'],quiz:[['¿Cuál es un componente de hardware?',['Un teclado','Un navegador','Un sistema operativo']],['¿Cuál es un ejemplo de software?',['Un monitor','Un procesador de texto','Un mouse']],['¿Qué dispositivo suele mostrar la salida visual?',['Pantalla','Micrófono','Teclado']],['¿Para qué sirve un sistema operativo?',['Administrar recursos del dispositivo','Imprimir solo fotografías','Reemplazar Internet']],['¿Qué extensión corresponde habitualmente a una imagen?',['.jpg','.xlsx','.exe']]]},
 {title:'Alfabetización en redes digitales de información',emoji:'🌐',intro:'Exploramos cómo se conecta el mundo y cómo evolucionó la Web.',topics:[['Internet y World Wide Web','Internet es la red mundial de redes; la WWW es un servicio que permite acceder a páginas y recursos enlazados. No son sinónimos.'],['HTML, HTTP y enlaces','HTML estructura el contenido de las páginas. HTTP y HTTPS son protocolos de comunicación web. Un hipervínculo conecta recursos; el hipertexto permite navegación no lineal.'],['Hipermedia y comunicación digital','La hipermedia combina texto, imagen, audio y video enlazados. Correo electrónico, chat y podcast son medios digitales con distintas funciones.'],['Buscadores y metabuscadores','Un buscador indexa contenidos y permite encontrarlos. Un metabuscador consulta varios motores o fuentes para reunir resultados.'],['Cibercultura y sociedad red','La cibercultura reúne prácticas y formas de relación mediadas por tecnologías. La sociedad de la información enfatiza el acceso a datos; la del conocimiento, su comprensión y aplicación.'],['Web 1.0, 2.0, 3.0 y 4.0','Modelo didáctico: 1.0, lectura principalmente; 2.0, participación y colaboración; 3.0, datos conectados y web semántica; 4.0, servicios inteligentes y contextuales. Estas etiquetas no son etapas rígidas.'],['Seguridad en Internet','Las contraseñas únicas, la verificación en dos pasos y la revisión de enlaces ayudan a proteger las cuentas. No compartas datos personales innecesariamente.']],tasks:['Armá una línea de tiempo ilustrada de la Web 1.0 a la Web 4.0 con un ejemplo por etapa.','Elegí un tema escolar y compará los resultados de dos buscadores. Registrá diferencias.','Diseñá un afiche con cinco consejos para navegar de forma segura.'],quiz:[['¿Internet y WWW son exactamente lo mismo?',['Sí','No','Solo en celulares']],['¿Qué lenguaje estructura páginas web?',['HTML','MP3','PNG']],['¿Qué es un hipervínculo?',['Un enlace a otro recurso','Un antivirus','Un tipo de teclado']],['¿Qué caracteriza especialmente a la Web 2.0?',['Participación y colaboración','Ausencia de usuarios','Solo lectura sin interacción']],['¿Qué acción mejora la seguridad?',['Compartir contraseñas','Usar verificación en dos pasos','Abrir enlaces desconocidos']]]},
@@ -255,9 +255,11 @@ const registerBtn=document.getElementById('registerBtn');
 const loginBtn=document.getElementById('loginBtn');
 const logout=document.getElementById('logout');
 let mustChangePassword=false;
+let accountApproved=false;
+let isTeacher=false;
 const schoolEmail=dni=>`dni${dni}@alumnos.nticx.invalid`;
 function validDni(){const d=authDni.value.trim();if(!/^\d{7,9}$/.test(d))throw new Error('Escribí un DNI válido, sin puntos (7 a 9 números).');return d}
-function requireReady(){if(mustChangePassword){setAuthStatus('Primero cambiá tu contraseña inicial.');return false}return true}
+function requireReady(){if(!activeUser||isTeacher){setAuthStatus('Ingresá con tu cuenta de alumno.');return false}if(mustChangePassword){setAuthStatus('Primero cambiá tu contraseña inicial.');return false}if(!accountApproved){setAuthStatus('Tu cuenta está pendiente de aprobación docente.');return false}return true}
 function setAuthStatus(msg){authStatus.textContent=msg}
 function lockExam(i,score){
  saved[i]=score;
@@ -284,8 +286,8 @@ function resetSessionView(){
 }
 async function loadStudentData(){
  if(!activeUser)return;
- const {data:profile}=await supabaseClient.from('alumnos').select('nombre_apellido,curso').eq('id',activeUser.id).maybeSingle();
- if(profile){document.getElementById('student').value=profile.nombre_apellido;document.getElementById('course').value=profile.curso;}
+ const {data:profile}=await supabaseClient.from('alumnos').select('nombre_apellido,curso,estado_cuenta').eq('id',activeUser.id).maybeSingle();
+ if(profile){document.getElementById('student').value=profile.nombre_apellido;document.getElementById('course').value=profile.curso;accountApproved=profile.estado_cuenta==='APROBADO';if(!accountApproved)setAuthStatus('Tu registro está '+(profile.estado_cuenta||'PENDIENTE')+'. Esperá la aprobación docente.');}else{accountApproved=false;setAuthStatus('No se encontró el perfil. Consultá con la docente.');}
  const {data:grades,error:gradeError}=await supabaseClient.from('evaluaciones').select('unidad,puntaje').eq('alumno_id',activeUser.id);
  if(gradeError){setAuthStatus('No se pudo verificar si ya rendiste. No envíes evaluaciones hasta resolver la conexión: '+gradeError.message);for(let i=0;i<8;i++){(i===7?document.getElementById('corregirIntegrador'):document.getElementById('check'+i)).disabled=true;}return;}
  (grades||[]).forEach(g=>{if(g.unidad>=1&&g.unidad<=8)lockExam(g.unidad-1,g.puntaje)});
@@ -301,12 +303,12 @@ async function saveProfile(){
  if(!activeUser)return false;
  const nombre=document.getElementById('student').value.trim(),curso=document.getElementById('course').value.trim();
  if(!nombre||!curso){setAuthStatus('Completá nombre, apellido y curso antes de guardar.');return false}
- const {error}=await supabaseClient.from('alumnos').upsert({id:activeUser.id,nombre_apellido:nombre,curso:curso},{onConflict:'id'});
+ const {error}=await supabaseClient.from('alumnos').update({nombre_apellido:nombre,curso:curso}).eq('id',activeUser.id);
  if(error){setAuthStatus('No se pudo guardar el perfil: '+error.message);return false}
  return true;
 }
 async function guardarActividad(key,value){
- if(!activeUser||!requireReady()){setAuthStatus('Iniciá sesión y cambiá tu contraseña para guardar actividades.');return false}
+ if(!activeUser||!requireReady()){return false}
  if(!await saveProfile())return false;
  const [u,c]=key.split('-').map(Number);
  const {error}=await supabaseClient.from('actividades').upsert({alumno_id:activeUser.id,unidad:u+1,clase:c+1,respuesta:value,fecha_actualizacion:new Date().toISOString()},{onConflict:'alumno_id,unidad,clase'});
@@ -314,7 +316,7 @@ async function guardarActividad(key,value){
  return true;
 }
 async function enviarEvaluacion(unidad,respuestas,resultado,index){
- if(!supabaseClient||!activeUser||!requireReady()){resultado.textContent='Primero iniciá sesión y cambiá tu contraseña.';return}
+ if(!supabaseClient||!activeUser||!requireReady()){resultado.textContent='Necesitás iniciar sesión y tener la cuenta aprobada por la docente.';return}
  if(!await saveProfile()){resultado.textContent='Completá nombre, apellido y curso.';return}
  const boton=unidad===8?document.getElementById('corregirIntegrador'):document.getElementById('check'+index);
  boton.disabled=true;resultado.textContent='Enviando evaluación al servidor...';
@@ -334,32 +336,79 @@ async function enviarEvaluacion(unidad,respuestas,resultado,index){
 async function applySession(session){
  activeUser=session?.user||null;
  mustChangePassword=!!(activeUser?.user_metadata?.nticx_password_change_required);
+ accountApproved=false;isTeacher=false;
  resetSessionView();
  logout.hidden=!activeUser;
  document.getElementById('authLoggedOut').hidden=!!activeUser;
+ document.getElementById('teacherLogin').hidden=!!activeUser;
+ document.getElementById('teacherPanel').classList.add('hidden');
  document.getElementById('changePasswordBox').hidden=!activeUser||!mustChangePassword;
  document.getElementById('student').readOnly=!!activeUser;
  document.getElementById('course').readOnly=!!activeUser;
  if(activeUser){
-   setAuthStatus(mustChangePassword?'Tu cuenta está creada. Cambiá QUILMES por una contraseña personal para continuar.':'Sesión iniciada correctamente.');
-   if(!mustChangePassword)await loadStudentData();
+   const {data:admin,error:adminError}=await supabaseClient.rpc('listar_alumnos_nticx');
+   if(!adminError){
+     isTeacher=true;accountApproved=false;
+     document.getElementById('changePasswordBox').hidden=true;
+     document.getElementById('teacherPanel').classList.remove('hidden');
+     setAuthStatus('Sesión docente iniciada. Ya podés aprobar solicitudes.');
+     renderTeacherStudents(admin||[]);
+   }else{
+     setAuthStatus(mustChangePassword?'Cambiá tu contraseña inicial.':'Verificando estado de tu cuenta...');
+     if(!mustChangePassword)await loadStudentData();
+   }
  }else setAuthStatus('Registrate o ingresá para guardar trabajos y rendir evaluaciones.');
 }
+function renderTeacherStudents(rows){
+ const el=document.getElementById('teacherStudents');el.replaceChildren();
+ const status=document.getElementById('teacherStatus');
+ status.textContent=rows.length+' alumno(s) registrado(s).';
+ if(!rows.length){el.textContent='Todavía no hay solicitudes.';return}
+ for(const a of rows){
+   const item=document.createElement('div');item.className='topic';
+   const label=document.createElement('p');
+   label.textContent=[a.nombre_apellido,a.curso,'DNI '+a.dni,'Estado: '+a.estado_cuenta].join(' · ');
+   item.append(label);
+   for(const estado of ['APROBADO','RECHAZADO']){
+     const b=document.createElement('button');b.type='button';b.textContent=estado==='APROBADO'?'✓ Aprobar':'✕ Rechazar';
+     b.style.marginRight='8px';b.disabled=a.estado_cuenta===estado;
+     b.onclick=async()=>{
+       if(!confirm('¿Confirmás '+(estado==='APROBADO'?'aprobar':'rechazar')+' a '+a.nombre_apellido+'?'))return;
+       b.disabled=true;
+       const {error}=await supabaseClient.rpc('aprobar_alumno_nticx',{p_alumno_id:a.id,p_estado:estado});
+       if(error){status.textContent='Error: '+error.message;b.disabled=false;return}
+       await refreshTeacherStudents();
+     };
+     item.append(b);
+   }
+   el.append(item);
+ }
+}
+async function refreshTeacherStudents(){
+ const {data,error}=await supabaseClient.rpc('listar_alumnos_nticx');
+ if(error){document.getElementById('teacherStatus').textContent='Error: '+error.message;return}
+ renderTeacherStudents(data||[]);
+}
+document.getElementById('refreshStudents').onclick=refreshTeacherStudents;
+document.getElementById('teacherLoginBtn').onclick=async()=>{
+ const email=document.getElementById('teacherEmail').value.trim(),password=document.getElementById('teacherPassword').value;
+ if(!email||!password){setAuthStatus('Ingresá tu correo y contraseña docente.');return}
+ const {error}=await supabaseClient.auth.signInWithPassword({email,password});
+ document.getElementById('teacherPassword').value='';
+ if(error)setAuthStatus('No se pudo iniciar sesión docente: '+error.message);
+};
 registerBtn.onclick=async()=>{
  if(!supabaseClient){setAuthStatus('No se pudo conectar con Supabase.');return}
  try{
-  const dni=validDni(), nombre=document.getElementById('regName').value.trim(),curso=document.getElementById('regCourse').value.trim();
+  const dni=validDni(),nombre=document.getElementById('regName').value.trim(),curso=document.getElementById('regCourse').value.trim(),password=authPassword.value;
   if(nombre.length<5||!curso)throw new Error('Completá apellido, nombre y curso.');
-  if(authPassword.value!=='QUILMES')throw new Error('Para crear tu cuenta ingresá la contraseña inicial QUILMES.');
-  registerBtn.disabled=true;
-  const {data,error}=await supabaseClient.auth.signUp({email:schoolEmail(dni),password:'QUILMES',options:{data:{nticx_password_change_required:true}}});
-  if(error)throw error;
-  if(!data.session||!data.user)throw new Error('El registro requiere desactivar la confirmación por email en Supabase. No está habilitado todavía.');
-  activeUser=data.user;
-  const {error:profileError}=await supabaseClient.from('alumnos').upsert({id:data.user.id,dni,nombre_apellido:nombre,curso},{onConflict:'id'});
-  if(profileError)throw new Error('Cuenta creada, pero no se pudo guardar el perfil: '+profileError.message);
-  document.getElementById('student').value=nombre;document.getElementById('course').value=curso;
-  await applySession(data.session);
+  if(password.length<10||password==='QUILMES')throw new Error('Elegí una contraseña personal de al menos 10 caracteres, distinta de QUILMES.');
+  registerBtn.disabled=true;setAuthStatus('Enviando solicitud de registro...');
+  const res=await fetch(SUPABASE_URL+'/functions/v1/registro-nticx',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_PUBLIC_KEY},body:JSON.stringify({dni,nombre,curso,password})});
+  const result=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(result.error||'No se pudo registrar. Revisá si la función de registro está desplegada.');
+  authPassword.value='';
+  setAuthStatus('Solicitud recibida. Esperá que la docente apruebe tu cuenta. Después ingresá con tu DNI y contraseña personal.');
  }catch(e){setAuthStatus(e.message||String(e))}finally{registerBtn.disabled=false}
 };
 loginBtn.onclick=async()=>{
@@ -380,7 +429,7 @@ document.getElementById('changePasswordBtn').onclick=async()=>{
  if(error){setAuthStatus('No se pudo cambiar la contraseña: '+error.message);return}
  mustChangePassword=false;
  document.getElementById('changePasswordBox').hidden=true;
- setAuthStatus('Contraseña personal guardada. Ya podés trabajar.');
+ setAuthStatus('Contraseña personal guardada. Verificaremos si tu cuenta está aprobada.');
  await loadStudentData();
 };
 logout.onclick=async()=>{if(supabaseClient)await supabaseClient.auth.signOut()};
