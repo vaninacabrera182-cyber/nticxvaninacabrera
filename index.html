@@ -338,6 +338,10 @@ async function loadStudentData(){
   if(t)t.value=a.respuesta;
  });
  update();
+ // Confirmación visible solo cuando el perfil y los datos se cargaron sin errores.
+ if(accountApproved && activeUser?.id===loadingUserId){
+  setAuthStatus('✅ Cuenta aprobada. Ya podés guardar actividades y rendir evaluaciones.');
+ }
 }
 async function saveProfile(){
  if(!activeUser)return false;
