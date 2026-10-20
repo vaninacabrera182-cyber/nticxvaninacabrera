@@ -593,8 +593,18 @@ if(supabaseClient){
   controls.append(previous,counter,next);panel.append(intro,start,controls);
   area.before(panel);area.hidden=true;submit.hidden=true;
   let order=[],position=0,started=false;
+  const originalQuestionTexts=questions.map(q=>{
+   const title=q.querySelector('legend strong');
+   return title?title.textContent.replace(/^\s*\d+\s*[.)]\s*/, ''):'';
+  });
   const show=()=>{
-   questions.forEach((q,j)=>q.classList.toggle('exam-question-hidden',!started||j!==order[position]));
+   questions.forEach((q,j)=>{
+    q.classList.toggle('exam-question-hidden',!started||j!==order[position]);
+    if(started&&j===order[position]){
+     const title=q.querySelector('legend strong');
+     if(title)title.textContent=`${position+1}. ${originalQuestionTexts[j]}`;
+    }
+   });
    counter.textContent=`Pregunta ${position+1} de ${questions.length}`;
    previous.disabled=position===0;
    next.hidden=position===questions.length-1;
