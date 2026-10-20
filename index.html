@@ -613,9 +613,15 @@ if(supabaseClient){
     }
    }
    area.hidden=false;start.hidden=true;controls.hidden=false;show();
-   area.scrollIntoView({behavior:'smooth',block:'start'});
+   keepExamInView();
   };
-  previous.onclick=()=>{if(position>0){position--;show()}};
+  const keepExamInView=()=>{
+   // Anclamos la vista al panel del examen, nunca al contenedor de preguntas
+   // (que cambia de altura y puede desplazar la pantalla hacia otra unidad).
+   const y=panel.getBoundingClientRect().top+window.scrollY-24;
+   window.scrollTo({top:Math.max(0,y),behavior:'instant'});
+  };
+  previous.onclick=()=>{if(position>0){position--;show();keepExamInView()}};
   next.onclick=()=>{
    const q=questions[order[position]];
    if(!q.querySelector('input:checked')){
@@ -624,7 +630,7 @@ if(supabaseClient){
     return;
    }
    const output=i===7?document.getElementById('integradorResultado'):document.getElementById('result'+i);
-   output.textContent='';position++;show();
+   output.textContent='';position++;show();keepExamInView();
   };
   stop();exams.push({i,stop,panel,start,controls,area,submit,finished});
  }
