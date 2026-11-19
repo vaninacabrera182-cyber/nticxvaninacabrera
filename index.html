@@ -788,7 +788,11 @@ if(supabaseClient){
  lab.querySelector('#wordInsertTable').addEventListener('click',()=>{editor.focus();exec('insertHTML','<table><tbody><tr><td>Herramienta</td><td>Uso</td></tr><tr><td>Editor de texto</td><td>Crear documentos</td></tr></tbody></table><p></p>')});
  lab.querySelector('#wordCheck').addEventListener('click',()=>{let ok=tasks[active].check();if(ok){completed.add(active);feedback.textContent='✅ ¡Muy bien! Cumpliste los requisitos de esta actividad. Podés continuar con otra.'}else feedback.textContent='🔎 Todavía falta algo. '+tasks[active].hint;renderTasks()});
  lab.querySelector('#wordReset').addEventListener('click',()=>{if(confirm('¿Reiniciar el documento de esta actividad? Se perderán los cambios no descargados.'))load(active)});
- lab.querySelector('#wordDownload').addEventListener('click',()=>{let content='<!doctype html><html><head><meta charset="utf-8"><title>Práctica Word NTICx</title></head><body>'+editor.innerHTML+'<script>
+ lab.querySelector('#wordDownload').addEventListener('click',()=>{let content='<!doctype html><html><head><meta charset="utf-8"><title>Práctica Word NTICx</title></head><body>'+editor.innerHTML+'</body></html>';let blob=new Blob(['\ufeff',content],{type:'application/msword;charset=utf-8'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='NTICx_Practica_Word_'+(active+1)+'.doc';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);feedback.textContent='📄 Se descargó un archivo .doc compatible con Word. Conservá tu copia.'});
+ lab.querySelector('#wordPrint').addEventListener('click',()=>{let w=window.open('','_blank');if(!w){feedback.textContent='Permití las ventanas emergentes para imprimir.';return}w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Documento NTICx</title></head><body>'+editor.innerHTML+'</body></html>');w.document.close();w.focus();w.print()});
+ load(0);
+})();
+</script><script>
 (function(){
  const start=()=>{
   const nav=document.getElementById('nav'),section=document.getElementById('inteligenciaArtificial');if(!nav||!section)return;
@@ -802,8 +806,5 @@ if(supabaseClient){
   document.getElementById('iaReiniciar').onclick=()=>{quiz.querySelectorAll('input').forEach(x=>x.checked=false);document.getElementById('iaResultado').textContent=''};
  };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
-</script></body></html>';let blob=new Blob(['\ufeff',content],{type:'application/msword;charset=utf-8'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='NTICx_Practica_Word_'+(active+1)+'.doc';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);feedback.textContent='📄 Se descargó un archivo .doc compatible con Word. Conservá tu copia.'});
- lab.querySelector('#wordPrint').addEventListener('click',()=>{let w=window.open('','_blank');if(!w){feedback.textContent='Permití las ventanas emergentes para imprimir.';return}w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Documento NTICx</title></head><body>'+editor.innerHTML+'</body></html>');w.document.close();w.focus();w.print()});
- load(0);
-})();
-</script></body></html>
+</script>
+</body></html>
